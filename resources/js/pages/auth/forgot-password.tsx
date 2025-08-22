@@ -7,14 +7,14 @@ import TextLink from '@/components/text-link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import AuthLayout from '@/layouts/auth-layout';
+import AuthSplitLayout from '@/layouts/auth/auth-split-layout';
 
 export default function ForgotPassword({ status }: { status?: string }) {
     return (
-        <AuthLayout title="Forgot password" description="Enter your email to receive a password reset link">
+        <AuthSplitLayout title="Forgot password" description="Enter your email to receive a password reset link">
             <Head title="Forgot password" />
 
-            {status && <div className="mb-4 text-center text-sm font-medium text-green-600">{status}</div>}
+            {status && <div className="mb-4 text-center text-sm font-medium text-emerald-600">{status}</div>}
 
             <div className="space-y-6">
                 <Form method="post" action={route('password.email')}>
@@ -42,6 +42,6 @@ export default function ForgotPassword({ status }: { status?: string }) {
                     <TextLink href={route('login')}>log in</TextLink>
                 </div>
             </div>
-        </AuthLayout>
+        </AuthSplitLayout>
     );
 }
